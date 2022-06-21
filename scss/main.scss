@@ -1,3 +1,23 @@
-p {
-    color: black;
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0; }
+
+.grid-index {
+    display: grid;
+    grid-template: "header"
+    "header"
+    "main"
+    "footer" /
+    auto;
 }
+
+//==========================Import==========================
+
+@import "allvariables";
+@import "headernav";
+@import "mainbody";
+@import "footer";
+
+//==========================media==========================
+

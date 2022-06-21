@@ -1,0 +1,11 @@
+.navegador {
+    width: -webkit-fill-available;
+    top: 0;
+    z-index: 9999;
+    position: fixed;
+    background-color: #d5a400 !important;
+}
+
+.navbar {
+    --bs-navbar-padding-y: 0 !important;
+}
