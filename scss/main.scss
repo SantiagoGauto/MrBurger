@@ -1,3 +1,4 @@
+//==========================pagina==========================
 * {
     box-sizing: border-box;
     padding: 0;
@@ -5,11 +6,18 @@
 
 .grid-index {
     display: grid;
-    grid-template: "header"
-    "header"
-    "main"
-    "footer" /
-    auto;
+    grid-template: 
+        "header"
+        "nav"
+        "main"
+        "footer" /
+        auto;
+    }
+
+//====================================================
+
+h1 {
+    margin-bottom: 0px !important;
 }
 
 //==========================Import==========================
@@ -21,3 +29,34 @@
 
 //==========================media==========================
 
+@media screen and (max-width: 767px) {
+    .grid-index {
+        display: grid;
+        grid-template: 
+            "header"
+            "nav"
+            "main"
+            "footer" /
+            auto;
+        }
+    .fondo_texto {
+        padding-bottom: 0px;
+        h1 {
+            font-size: 6rem;
+        }
+        p {
+            font-size: 1.30rem !important;
+        }
+    }
+    .container-fluid {
+        padding-top: calc(var(--bs-gutter-x) * .3);
+        padding-bottom: calc(var(--bs-gutter-x) * .3);
+    }
+    .row {
+        flex-direction: column
+    }
+    .lados {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+}
