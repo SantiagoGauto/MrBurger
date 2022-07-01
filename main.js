@@ -42,6 +42,22 @@ do {
 
 alert("Bienvenido a mi pagina web "+nombreUsuario)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 do {
     Comidas.comida = prompt(` Bienvenidos a MrBurger \n ¿Que desea pedir?
     hamburguesa / precio=${hamburguesa}
