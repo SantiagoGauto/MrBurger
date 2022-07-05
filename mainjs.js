@@ -1,9 +1,3 @@
-//Variables
-// let precio = 0;
-// let cantidadProductos = 0;
-// let inicio = false;
-//--------------------------------------------------------------------
-
 // let hamburguesa = 900;
 // let papasfrita = 100;
 // let bebida = 150;
@@ -71,6 +65,8 @@ console.log (Envio)
 alert ("¡Bienvenido/a a MrBurger las mejores hamburguesas de Bs As!");
 
 let nombreUsuario = "";
+//llamada de la clase id del html a js para hacer la función de mostrar nombre de la persona+la bienvenida a la pagina.
+let titulo = document.getElementById("bienvenida")
 
 do {
 
@@ -81,7 +77,9 @@ do {
     nombreUsuario = prompt("Para comenzar queremos saber su nombre o apodo");
 } while (nombre.indexOf(nombreUsuario) != -1 );
 
-alert("Bienvenido a mi pagina web "+nombreUsuario)
+alert("Bienvenido a mi pagina web "+nombreUsuario+"!")
+//aca se mostrara la bienvenida a esa persona y su nombre debajo de h1 de mi pagina.
+titulo.innerText = "Bienvenido a mi pagina web "+nombreUsuario+"!";
 
 //*--------------------------------------Bucle Do.. While--------------------------------------*
 
@@ -89,25 +87,25 @@ alert("Bienvenido a mi pagina web "+nombreUsuario)
 do {      
     let Comidas= prompt(` Bienvenidos a MrBurger \n ¿Que desea pedir? \n ingrese el numero que quiere y presione aceptar.
     >>Hamburguesas<<
-    1. MrBurger Simple precio: 800.
-    2. MrBurger Medium precio: 1200.
-    3. MrBurger Big precio: 1400.
+    1- MrBurger Simple precio: 800.
+    2- MrBurger Medium precio: 1200.
+    3- MrBurger Big precio: 1400.
     >>Papas Fritas<<
-    4. Patatas española precio: 300.
-    5. Patatas en bastón precio: 300.
-    6. Patatas cerilla precio: 300.
-    7. Patatas paja precio: 300.
-    8. Patatas onduladas precio: 300.
+    4- Patatas española precio: 300.
+    5- Patatas en bastón precio: 300.
+    6- Patatas cerilla precio: 300.
+    7- Patatas paja precio: 300.
+    8- Patatas onduladas precio: 300.
     >>Bebida<<
-    9. Agua precio: 200.
-    10. Coca-Cola precio: 150.
-    11. Pepsi precio: 150.
-    12. Sprite precio: 150.
+    9- Agua precio: 200.
+    10- Coca-Cola precio: 150.
+    11- Pepsi precio: 150.
+    12- Sprite precio: 150.
     >>Condimentos<<
-    13. Ketchup precio: 20.
-    14. Mayonesa precio: 20.
-    15. Mostaza precio: 20.
-    16. Salsa Tártara precio: 20.
+    13- Ketchup precio: 20.
+    14- Mayonesa precio: 20.
+    15- Mostaza precio: 20.
+    16- Salsa Tártara precio: 20.
     `)
     cantidad = Number(prompt("¿Cuantos desea llevar?"));
     
