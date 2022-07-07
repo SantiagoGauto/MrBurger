@@ -187,3 +187,41 @@ fincompra();
             alert("Su total de la compra esta en espera, sea paciente y estará lista!");
         }
     }
+
+//######################################################################################
+//-Eventos
+//######################################################################################
+
+//uso del evento Submit, cuando el usuario puse el botón de enviar se mostraran los datos en la consola.
+
+const formulario = document.querySelector("#formulario");
+const input1 = document.getElementById("buscador")
+const element = document.querySelectorAll("#cards")
+
+formulario.addEventListener("submit", validarFormulario);
+
+function validarFormulario(event) {
+    event.preventDefault();
+
+    let form = event.target;
+    let nombre = form.children[0].value;
+    let edad = form.children[2].value;
+
+    console.log(nombre)
+    console.log(edad)
+}
+
+//uso del evento input para el buscador.
+
+input1.addEventListener("input", () => {
+    console.log(input1.value)
+})
+
+//uso de evento para cambiar el botón cuando se realiza la compra.
+
+element.addEventListener("click", modifyText);
+
+function modifyText () {
+    let build = document.querySelectorAll("#build");
+    build.innerText = "Comprado";
+}
