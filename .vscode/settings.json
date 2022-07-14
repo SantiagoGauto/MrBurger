@@ -1,10 +1,6 @@
 {
+    "liveServer.settings.port": 5501,
     "cSpell.words": [
-        "allvariables",
-        "envio",
-        "fincompra",
-        "headernav",
-        "mainbody",
-        "papasfrita"
+        "renderizar"
     ]
 }

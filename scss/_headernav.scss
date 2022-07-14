@@ -31,6 +31,7 @@
     --bs-btn-color: #000000;
     text-shadow: 0px 0px 5px #ffffff;
     --bs-btn-border-color: #00000042;
+    --bs-btn-hover-bg: #424242;
 }
 
 .btn {
@@ -53,4 +54,19 @@
     background: linear-gradient(90deg, #5c5c5c 0%, #cdcdcd 50%, #535353 100%);
     border-radius: 0px;
     padding: 0px 13px;
+}
+
+.boton {
+    background-color: #ff4100;
+    margin:  5px 15px 5px 0;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    --bs-btn-border-color: none;
+    --bs-btn-border-radius: 3rem;
+    text-shadow: 0px 0px 5px #ffffff;
+}
+
+.compra {
+    width: 25px;
+    height: 25px;
 }

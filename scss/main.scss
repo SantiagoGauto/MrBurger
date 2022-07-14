@@ -22,7 +22,6 @@ h1 {
 
 //==========================Import==========================
 
-@import "allvariables";
 @import "headernav";
 @import "mainbody";
 @import "footer";
@@ -58,5 +57,9 @@ h1 {
     .lados {
         padding-top: 0px;
         padding-bottom: 0px;
+    }
+    .table__productos{
+        display: flex;
+        flex-wrap: wrap;
     }
 }

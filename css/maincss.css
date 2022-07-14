@@ -37,7 +37,8 @@ h1 {
 .btn-outline-success {
   --bs-btn-color: #000000;
   text-shadow: 0px 0px 5px #ffffff;
-  --bs-btn-border-color: #00000042; }
+  --bs-btn-border-color: #00000042;
+  --bs-btn-hover-bg: #424242; }
 
 .btn {
   background-color: #ff6500; }
@@ -57,8 +58,25 @@ h1 {
   border-radius: 0px;
   padding: 0px 13px; }
 
+.boton {
+  background-color: #ff4100;
+  margin: 5px 15px 5px 0;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  --bs-btn-border-color: none;
+  --bs-btn-border-radius: 3rem;
+  text-shadow: 0px 0px 5px #ffffff; }
+
+.compra {
+  width: 25px;
+  height: 25px; }
+
 .main {
   background-image: url(../imagenes/fondo-negro.jpg); }
+
+.contenedor-icono svg {
+  width: 100px;
+  height: 100px; }
 
 .fondo_menu {
   background-image: url(../imagenes/burger.png);
@@ -97,26 +115,18 @@ h1 {
   font-size: 2.80rem;
   font-family: 'Stardos Stencil', cursive;
   font-weight: 600;
-  text-shadow: 0px 0px 10px #e3e3e3;
+  text-shadow: #ffffff 0px 0px 5px;
   color: #000000; }
 
 .historia {
   font-size: 1.50rem;
   font-family: 'Stardos Stencil', cursive;
-  text-shadow: 0px 0px 6px #7a7a7a;
-  color: #000000; }
+  text-shadow: 0px 0px 20px #060606;
+  color: #e1e1e1; }
 
 .w-100 {
   border-top-right-radius: 60px;
   border-bottom-left-radius: 60px; }
-
-.row > * {
-  padding-right: 30px;
-  padding-left: 30px; }
-
-.lados {
-  padding-right: calc(var(--bs-gutter-x) * .5) !important;
-  padding-left: calc(var(--bs-gutter-x) * .5) !important; }
 
 .title-burger {
   background: linear-gradient(90deg, #bf7400 0%, #d5a400 50%, #bf7400 100%); }
@@ -140,6 +150,175 @@ h4 {
   .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     max-width: 1920px; } }
 
+.contacto {
+  width: 100%;
+  padding: 25px 0;
+  overflow: hidden;
+  background-color: #ff9400; }
+
+.contenedor_contacto {
+  width: 70%;
+  max-width: 600px;
+  margin: auto; }
+
+.tituloContacto {
+  font-family: 'Alumni Sans Inline One', cursive;
+  color: #000000;
+  margin: 0.67em 0; }
+
+.labels {
+  font-family: 'Stardos Stencil', cursive;
+  font-size: 140%;
+  color: #000000;
+  text-shadow: 0px 0px 10px #ffffff; }
+
+.inputs {
+  width: 100%;
+  outline: none;
+  padding: 7px 0 7px;
+  font-family: 'Stardos Stencil', cursive;
+  font-size: 120%;
+  background: none;
+  background-color: #b56900b8;
+  border: none;
+  box-sizing: border-box;
+  resize: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom: 5px solid #603b00; }
+
+::placeholder {
+  color: #0000007f;
+  font-size: 1rem;
+  text-align: center; }
+
+.ol, ul {
+  padding-left: 0rem;
+  list-style: none; }
+
+.listado-formulario {
+  margin: 0 0 25px; }
+
+.btn_enviar {
+  margin-top: 20px;
+  padding: 10px 30px 15px;
+  font-family: 'Jockey One', sans-serif;
+  font-size: 120%;
+  background: #137c00;
+  border: none;
+  box-shadow: 0 8px 0 -5px #fff;
+  transition: 400ms;
+  float: right;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 50px; }
+
+h6 {
+  margin-bottom: 0px;
+  font-size: 3.4rem;
+  color: #ffffff;
+  text-shadow: 0px 0px 10px #0e0900; }
+
+.top-0 {
+  top: 50px !important; }
+
+.alert {
+  z-index: 100; }
+
+.text-center {
+  background-color: #000000; }
+
+.fondo-amarillo {
+  background-color: #361a00c7; }
+
+.mb-1 {
+  margin-top: 0.4rem !important;
+  margin-bottom: 0.40rem !important; }
+
+.color-boton {
+  background-color: #913900;
+  --bs-btn-border-color: none;
+  --bs-btn-hover-bg: #ff6500; }
+
+.card-img, .card-img-top {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; }
+
+.text-primary {
+  color: #ffffff !important;
+  margin-bottom: 0px;
+  font-family: "Jockey One", sans-serif; }
+
+.description {
+  font-family: "Jockey One", sans-serif;
+  height: 25px;
+  overflow: hidden;
+  transition: height .2s ease-in .2s; }
+
+.description:hover {
+  height: 50px; }
+
+.carrito {
+  min-height: 80vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%; }
+
+.table__productos {
+  display: flex; }
+
+.table__productos img {
+  width: 9rem;
+  object-fit: contain;
+  border-radius: 6px;
+  margin-right: 20px; }
+
+.table__cantidad input {
+  width: 40px;
+  border: none;
+  outline: 0;
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 30px;
+  margin-bottom: 20px; }
+
+.hide, .remove {
+  display: none; }
+
+.title {
+  font-size: 1rem; }
+
+.row > * {
+  padding-right: 0;
+  padding-left: 0; }
+
+.row {
+  --bs-gutter-x: 0; }
+
+.card-body {
+  padding: 0; }
+
+.mb-4 {
+  margin-bottom: 0 !important; }
+
+.color-carrito {
+  background-color: #0000009c; }
+
+.title-compra {
+  background: linear-gradient(90deg, #ff4100 0%, #ffc04d 50%, #ff4100 100%); }
+
+.bg-dark {
+  background-color: #000000a8 !important; }
+
+.text-center {
+  background-color: #000000a6; }
+
+.btn-outline-light {
+  --bs-btn-border-color: none
+; }
+
+.pb-0 {
+  padding-bottom: 1.5rem !important; }
+
 @media screen and (max-width: 767px) {
   .grid-index {
     display: grid;
@@ -157,4 +336,7 @@ h4 {
     flex-direction: column; }
   .lados {
     padding-top: 0px;
-    padding-bottom: 0px; } }
+    padding-bottom: 0px; }
+  .table__productos {
+    display: flex;
+    flex-wrap: wrap; } }
