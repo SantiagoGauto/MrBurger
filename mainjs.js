@@ -230,20 +230,28 @@ input1.addEventListener("input", () => {
 function habilitar(){
     val = 0;
 
-    if(names.value == ""){
-        val++;
-    }
-    if(edad.value == ""){
-        val++;
-    }
-    if(email.value == ""){
-        val++;
-    }
-    if(val == 0){
-        document.getElementById("btn").disabled = false;
-    } else {
-        document.getElementById("btn").disabled = true;
-    }
+    // if(names.value == ""){
+    //     val++;
+    // }
+    names.value == "" && val++;
+    // if(edad.value == ""){
+    //     val++;
+    // }
+    edad.value == "" && val++;
+    // if(email.value == ""){
+    //     val++;
+    // }
+    email.value == "" && val++;
+    //simplifico la lineas de código de arriba usando operador and
+
+    // if(val == 0){
+    //     document.getElementById("btn").disabled = false;
+    // } else {
+    //     document.getElementById("btn").disabled = true;
+    // }
+
+    //simplifico la lineas de código de arriba usando el operador ternario.
+    val == 0 ? document.getElementById("btn").disabled = false : document.getElementById("btn").disabled = true;
 }
 document.getElementById("names").addEventListener("keyup", habilitar);
 document.getElementById("edad").addEventListener("keyup", habilitar);
