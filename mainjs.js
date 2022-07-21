@@ -259,13 +259,15 @@ document.getElementById("email").addEventListener("keyup", habilitar);
 document.getElementById("btn").addEventListener("click", () => {
     Swal.fire({
         title: '¡Se a enviado todo correctamente!',
-        width: 600,
-        padding: '3em',
-        color: '#E03C00',
+        width: 400,
+        icon: 'success',
+        padding: '2em',
+        background: '#b8af00',
+        color: '#603b00',
         backdrop: `
         #603b00b5
-        url("../imagenes/hamburguesa.gif")
-        top
+        url("imagenes/hamburguesa.gif")
+        right top
         no-repeat
         `,
         showConfirmButton: false,
