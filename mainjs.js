@@ -257,5 +257,18 @@ document.getElementById("names").addEventListener("keyup", habilitar);
 document.getElementById("edad").addEventListener("keyup", habilitar);
 document.getElementById("email").addEventListener("keyup", habilitar);
 document.getElementById("btn").addEventListener("click", () => {
-    alert("¡Enviado!");
+    Swal.fire({
+        title: '¡Se a enviado todo correctamente!',
+        width: 600,
+        padding: '3em',
+        color: '#E03C00',
+        backdrop: `
+        #603b00b5
+        url("../imagenes/hamburguesa.gif")
+        top
+        no-repeat
+        `,
+        showConfirmButton: false,
+        timer: 1500
+    })
 });
