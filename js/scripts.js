@@ -270,7 +270,7 @@ document.getElementById("btn").addEventListener("click", () => {
 
 const lista = document.getElementById("listado");
 
-fetch('/data.json')
+fetch('data.json')
     .then( (response) => response.json())
     .then( (data) => {
         data.forEach(post => {
