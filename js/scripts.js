@@ -185,3 +185,100 @@ window.onload = function(){
     renderCarrito()
   }
 }
+
+//######################################################################################
+//-Eventos
+//######################################################################################
+
+//uso del evento Submit, cuando el usuario puse el botón de enviar se mostraran los datos en la consola.
+
+const formulario = document.querySelector("#formulario");
+const nombre = document.getElementById("names")
+const edad = document.getElementById("edad")
+const gmail = document.getElementById("email")
+
+
+formulario.addEventListener("submit", validarFormulario);
+
+function validarFormulario(event) {
+    event.preventDefault();
+
+
+    console.log(nombre.value);
+    console.log(edad.value);
+    console.log(gmail.value);
+}
+
+//uso del evento input para el buscador.
+const input1 = document.getElementById("buscador")
+
+input1.addEventListener("input", () => {
+    console.log(input1.value)
+})
+
+//habilitar y deshabilitar un botón al llenar formulario nombre, edad y email solo
+
+function habilitar(){
+    val = 0;
+
+    // if(names.value == ""){
+    //     val++;
+    // }
+    names.value == "" && val++;
+    // if(edad.value == ""){
+    //     val++;
+    // }
+    edad.value == "" && val++;
+    // if(email.value == ""){
+    //     val++;
+    // }
+    email.value == "" && val++;
+    //simplifico la lineas de código de arriba usando operador and
+
+    // if(val == 0){
+    //     document.getElementById("btn").disabled = false;
+    // } else {
+    //     document.getElementById("btn").disabled = true;
+    // }
+
+    //simplifico la lineas de código de arriba usando el operador ternario.
+    val == 0 ? document.getElementById("btn").disabled = false : document.getElementById("btn").disabled = true;
+}
+document.getElementById("names").addEventListener("keyup", habilitar);
+document.getElementById("edad").addEventListener("keyup", habilitar);
+document.getElementById("email").addEventListener("keyup", habilitar);
+document.getElementById("btn").addEventListener("click", () => {
+    Swal.fire({
+        title: '¡Se a enviado todo correctamente!',
+        width: 400,
+        icon: 'success',
+        padding: '2em',
+        background: '#b8af00',
+        color: '#603b00',
+        backdrop: `
+        #603b00b5
+        url("imagenes/hamburguesa.gif")
+        right top
+        no-repeat
+        `,
+        showConfirmButton: false,
+        timer: 1500
+    })
+});
+
+// fetch para los títulos y la historia/reseña.
+
+const lista = document.getElementById("listado");
+
+fetch('/data.json')
+    .then( (response) => response.json())
+    .then( (data) => {
+        data.forEach(post => {
+            const li = document.createElement("li");
+            li.innerHTML = `
+                            <h4>${post.titulo}</h4>
+                            <p>${post.resumen}</p>
+            `
+            lista.append(li)
+        });
+    })
