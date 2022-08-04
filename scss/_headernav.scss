@@ -19,8 +19,20 @@
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
-    font-family: 'Stardos Stencil', cursive;
+    font-family: 'Jockey One', sans-serif;
     color: #ffffff;
+    text-shadow: 0px 3px 5px #7c1d00;
+    background-image: linear-gradient(transparent 0%, transparent 90%, #ffd400 90%, #ffb161 100%);
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position-x: right;
+    transition: background-size 300ms;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link:hover {
+    background-size: 100% 100%;
+    background-position-x: left;
+    color: #000000a4;
 }
 
 .form-control {
@@ -31,7 +43,7 @@
     --bs-btn-color: #000000;
     text-shadow: 0px 0px 5px #ffffff;
     --bs-btn-border-color: #00000042;
-    --bs-btn-hover-bg: #424242;
+    --bs-btn-hover-bg: #113a00;
 }
 
 .btn {
@@ -69,4 +81,9 @@
 .compra {
     width: 25px;
     height: 25px;
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+    font-family: 'Jockey One', sans-serif;
 }

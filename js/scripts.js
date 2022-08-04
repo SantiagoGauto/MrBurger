@@ -266,19 +266,91 @@ document.getElementById("btn").addEventListener("click", () => {
     })
 });
 
-// fetch para los títulos y la historia/reseña.
+// usando async y await en vez de fetch .then.
 
 const lista = document.getElementById("listado");
 
-fetch('data.json')
-    .then( (response) => response.json())
-    .then( (data) => {
-        data.forEach(post => {
-            const li = document.createElement("li");
-            li.innerHTML = `
-                            <h4>${post.titulo}</h4>
-                            <p>${post.resumen}</p>
-            `
-            lista.append(li)
-        });
-    })
+const texto = async () => {
+  const response = await fetch ('data.json')
+  const data = await response.json()
+  data.forEach(post => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+                    <h4>${post.titulo}</h4>
+                    <p>${post.resumen}</p>
+    `
+    lista.append(li)
+  })
+}
+
+texto ()
+
+// fetch para los títulos y la historia/reseña.
+
+// fetch('data.json')
+//     .then( (response) => response.json())
+//     .then( (data) => {
+//         data.forEach(post => {
+//             const li = document.createElement("li");
+//             li.innerHTML = `
+//                             <h4>${post.titulo}</h4>
+//                             <p>${post.resumen}</p>
+//             `
+//             lista.append(li)
+//         });
+//     })
+
+// animación fachera para las imagenes de las hamburguesas :D
+
+var $conteudoGeral = document.querySelector(".conteudo-geral");
+var $conteudoEmArray = [].slice.call(document.querySelectorAll(".componente"));
+var $botoesDeFechar = [].slice.call(
+  document.querySelectorAll(".componente-botao-fechar")
+);
+
+setTimeout(function () {
+  $conteudoGeral.classList.remove("js-conteudo-geral");
+}, 200);
+
+$conteudoEmArray.forEach(function ($componente) {
+  $componente.addEventListener("click", function () {
+    if (this.classList.contains("caixa-conteudo-ativo")) return;
+    $conteudoGeral.classList.add("caixa--componente-ativo");
+    this.classList.add("caixa-conteudo-ativo");
+  });
+});
+
+$botoesDeFechar.forEach(function ($btn) {
+  $btn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    $conteudoGeral.classList.remove("caixa--componente-ativo");
+    document
+      .querySelector(".componente.caixa-conteudo-ativo")
+      .classList.remove("caixa-conteudo-ativo");
+  });
+});
+
+// efecto tiltable card
+
+let el = document.getElementById('w-101')
+const height = el.clientHeight
+const width = el.clientWidth
+el.addEventListener('mousemove', handleMove)
+function handleMove(e) {
+  const xVal = e.layerX
+  const yVal = e.layerY
+  const yRotation = 10 * ((xVal - width / 2) / width)
+  const xRotation = -10 * ((yVal - height / 2) / height)
+
+  const string = 'perspective(1500px) scale(1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)'
+    el.style.transform = string
+}
+el.addEventListener('mouseout', function () {
+    el.style.transform = 'perspective(1500px) scale (0.2) rotateX(0) rotateY(0)'
+})
+el.addEventListener('mousedown', function () {
+    el.style.transform = 'perspective(1500px) scale (0.2) rotateX(0) rotateY(0)'
+})
+el.addEventListener('mouseup', function () {
+    el.style.transform = 'perspective(1500px) scale (1) rotateX(0) rotateY(0)'
+})

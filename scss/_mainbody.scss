@@ -10,6 +10,7 @@
 .listado {
     li p {
         color: #ffffff;
+        font-family: 'Stardos Stencil', cursive;
     }
 }
 
@@ -67,8 +68,27 @@
 }
 
 .w-100 {
-    border-top-right-radius: 60px;
-    border-bottom-left-radius: 60px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    transition: box-shadow 0.1s, 
+    transform 0.1s;
+    -webkit-filter: grayscale(0.8);
+    filter: grayscale(0.8);
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+.w-100:hover {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+    z-index: 500;
 }
 
 .title-burger {
@@ -82,6 +102,87 @@ h4 {
     font-weight: 600;
     color: black;
     text-shadow: 0px 0px 10px #ffffff;
+}
+
+.cardstas {
+    display: grid;
+    grid-column: 1/-1;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    background: #00000087;
+    grid-gap: 2rem;
+    padding: 2rem;
+    perspective: 1000px;
+}
+
+.framework-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 1rem;
+    text-align: center;
+    padding-top: 3rem;
+    position: relative;
+    transform-origin: top center;
+    --rotate: 10deg;
+    transform: rotateX(var(--rotate));
+    transition: transform 0.2s;
+    box-shadow: 0 0 10px #00000033;
+}
+
+.framework-card:before {
+    right: auto;
+    left: 20px;
+}
+
+.framework-card:hover {
+    transform: rotateX(-10deg);
+}
+
+card:before,
+.framework-card:after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #5c0dac;
+    border: 1px solid #000;
+    box-shadow: 0 0 3px #0000001a;
+    top: 15px;
+    right: 20px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.framework-card:before,
+.framework-card:after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #ac4f0d;
+    border: 1px solid #000;
+    box-shadow: 0 0 3px #0000001a;
+    top: 15px;
+    right: 20px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.framework-card img {
+    height: 80px;
+    width: 100%;
+    object-fit: contain;
+}
+
+img {
+    max-width: 100%;
+}
+
+.framework-card p {
+    color: #000000;
+    font-family: 'Stardos Stencil', cursive;
+    font-size: 18px;
+    font-weight: 600;
+    text-shadow: 0px 4px 3px #818181;
 }
 
 .listado1 {
@@ -287,3 +388,306 @@ h6 {
 .title-compra {
     background: linear-gradient(90deg, #ff4100 0%, #ffc04d 50%, #ff4100 100%);
 }
+
+    .fondo-hamburguesas {
+        background-color: #0000009c;
+    }
+
+    .conteudo-geral {
+        position: relative;
+        overflow: hidden;
+        height: 100vh;
+        padding: 10px;
+    }
+    .componente-interno-geral {
+        position: relative;
+        height: 100%;
+    }
+    .componente-interno-geral:hover .componente-fundo-imagem:after {
+        opacity: 1;
+    }
+    
+    .componente {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 19.2%;
+        height: 100%;
+        background: #252525;
+        transition: transform 0.6s 0.7s, width 0.7s, opacity 0.6s 0.7s,
+        z-index 0s 1.3s;
+        will-change: transform, width, opacity;
+    }
+    .componente:not(.caixa-conteudo-ativo) {
+        cursor: pointer;
+    }
+    .componente-sem-rolagem {
+        overflow: hidden;
+        position: relative;
+        height: 100%;
+    }
+    .componente-interno {
+        overflow: hidden;
+        position: relative;
+        height: 100%;
+        transition: transform 1s;
+    }
+    .conteudo-geral.js-conteudo-geral .componente-interno {
+        transform: translate3d(0, 100%, 0);
+    }
+    .componente-fundo-imagem {
+        position: relative;
+        height: 100%;
+        transition: transform 0.6s 0.7s;
+        will-change: transform;
+    }
+    
+    .componente-fundo-imagem:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -5%;
+        width: 100%;
+        height: 110%;
+        background-size: cover;
+        background-position: center center;
+        transition: transform 1s;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    
+    .conteudo-geral.js-conteudo-geral .componente-fundo-imagem:before {
+        transform: translate3d(0, -100%, 0) scale(1.2);
+    }
+    .componente.caixa-conteudo-ativo .componente-fundo-imagem:before {
+        transition: transform 0.8s;
+    }
+    .componente-fundo-imagem:after {
+        content: "";
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+    .conteudo-geral.caixa--componente-ativo .componente-fundo-imagem:after {
+        transition: opacity 0.5s 1.4s;
+        opacity: 1 !important;
+    }
+    .componente-visual-inicial {
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding-bottom: 2rem;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s 1.2s;
+    }
+    .conteudo-geral.js-conteudo-geral .componente-visual-inicial {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    .conteudo-geral.caixa--componente-ativo .componente-visual-inicial {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.5s;
+    }
+    .componente-titulo {
+        color: #fff;
+        text-shadow: 0px 0px 10px #000000;
+        text-transform: uppercase;
+        font-size: 2rem;
+        font-family: 'Jockey One', sans-serif;
+    }
+    .componente-content {
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.1s;
+    }
+    .componente.caixa-conteudo-ativo .componente-content {
+        z-index: 2;
+        opacity: 1;
+        pointer-events: auto;
+        transition: all 0.5s 1.4s;
+    }
+    .componente-text {
+        text-transform: uppercase;
+        font-size: 40px;
+        color: #fff;
+        font-family: 'Jockey One', sans-serif;
+    }
+    .componente-botao-fechar {
+        z-index: -1;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 60px;
+        height: 60px;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0s 0.45s;
+        cursor: pointer;
+    }
+    .componente.caixa-conteudo-ativo .componente-botao-fechar {
+        z-index: 5;
+        opacity: 1;
+        pointer-events: auto;
+        transition: all 0s 1.4s;
+    }
+    .componente-botao-fechar:before,
+    .componente-botao-fechar:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 8px;
+        margin-top: -4px;
+        background: #fff;
+        opacity: 0;
+        transition: opacity 0s;
+    }
+    .componente.caixa-conteudo-ativo .componente-botao-fechar:before,
+    .componente.caixa-conteudo-ativo .componente-botao-fechar:after {
+        opacity: 1;
+    }
+    .componente-botao-fechar:before {
+        transform: rotate(45deg) translateX(100%);
+    }
+    .componente.caixa-conteudo-ativo .componente-botao-fechar:before {
+        transition: all 0.3s 1.4s cubic-bezier(0.72, 0.09, 0.32, 1.57);
+        transform: rotate(45deg) translateX(0);
+    }
+    .componente-botao-fechar:after {
+        transform: rotate(-45deg) translateX(100%);
+    }
+    .componente.caixa-conteudo-ativo .componente-botao-fechar:after {
+        transition: all 0.3s 1.55s cubic-bezier(0.72, 0.09, 0.32, 1.57);
+        transform: rotate(-45deg) translateX(0);
+    }
+    
+    .componente:nth-child(1) {
+        transform: translate3d(0%, 0, 0);
+        transform-origin: 50% 50%;
+    }
+    .conteudo-geral.caixa--componente-ativo
+        .componente:nth-child(1):not(.caixa-conteudo-ativo) {
+        transform: scale(0.5) translate3d(0%, 0, 0);
+        opacity: 0;
+        transition: transform 0.95s, opacity 0.95s;
+    }
+    .componente:nth-child(1) .componente-interno {
+        transition-delay: 0s;
+    }
+    .componente:nth-child(1) .componente-fundo-imagem {
+        transform: translate3d(0%, 0, 0);
+    }
+    .componente:nth-child(1) .componente-fundo-imagem:before {
+        transition-delay: 0s;
+        background-image: url("../imagenes/fondohamburguersa1.jpg");
+    }
+    .componente:nth-child(2) {
+        transform: translate3d(105.2083333333%, 0, 0);
+        transform-origin: 155.2083333333% 50%;
+    }
+    .conteudo-geral.caixa--componente-ativo
+        .componente:nth-child(2):not(.caixa-conteudo-ativo) {
+        transform: scale(0.5) translate3d(105.2083333333%, 0, 0);
+        opacity: 0;
+        transition: transform 0.95s, opacity 0.95s;
+    }
+    .componente:nth-child(2) .componente-interno {
+        transition-delay: 0.1s;
+    }
+    .componente:nth-child(2) .componente-fundo-imagem:before {
+        transition-delay: 0.1s;
+        background-image: url("../imagenes/fondohamburguersa2.jpg");
+    }
+    .componente:nth-child(3) {
+        transform: translate3d(210.4166666667%, 0, 0);
+        transform-origin: 260.4166666667% 50%;
+    }
+    .conteudo-geral.caixa--componente-ativo
+        .componente:nth-child(3):not(.caixa-conteudo-ativo) {
+        transform: scale(0.5) translate3d(210.4166666667%, 0, 0);
+        opacity: 0;
+        transition: transform 0.95s, opacity 0.95s;
+    }
+    .componente:nth-child(3) .componente-interno {
+        transition-delay: 0.2s;
+    }
+    .componente:nth-child(3) .componente-fundo-imagem:before {
+        transition-delay: 0.2s;
+        background-image: url("../imagenes/fondohamburguersa3.jpg");
+    }
+    .componente:nth-child(4) {
+        transform: translate3d(315.625%, 0, 0);
+        transform-origin: 365.625% 50%;
+    }
+    .conteudo-geral.caixa--componente-ativo
+        .componente:nth-child(4):not(.caixa-conteudo-ativo) {
+        transform: scale(0.5) translate3d(315.625%, 0, 0);
+        opacity: 0;
+        transition: transform 0.95s, opacity 0.95s;
+    }
+    .componente:nth-child(4) .componente-interno {
+        transition-delay: 0.3s;
+    }
+    .componente:nth-child(4) .componente-fundo-imagem:before {
+        transition-delay: 0.3s;
+        background-image: url("../imagenes/fondohamburguersa4.jpg");
+    }
+    .componente:nth-child(5) {
+        transform: translate3d(420.8333333333%, 0, 0);
+        transform-origin: 470.8333333333% 50%;
+    }
+    .conteudo-geral.caixa--componente-ativo
+        .componente:nth-child(5):not(.caixa-conteudo-ativo) {
+        transform: scale(0.5) translate3d(420.8333333333%, 0, 0);
+        opacity: 0;
+        transition: transform 0.95s, opacity 0.95s;
+    }
+    .componente:nth-child(5) .componente-interno {
+        transition-delay: 0.4s;
+    }
+    .componente:nth-child(5) .componente-fundo-imagem:before {
+        transition-delay: 0.4s;
+        background-image: url("../imagenes/fondohamburguersa5.jpg");
+    }
+    .componente:hover .componente-fundo-imagem:after {
+        opacity: 0;
+    }
+    .componente.caixa-conteudo-ativo {
+        z-index: 1;
+        width: 100%;
+        transform: translate3d(0, 0, 0);
+        transition: transform 0.6s, width 0.7s 0.7s, z-index 0s;
+    }
+    .componente.caixa-conteudo-ativo .componente-fundo-imagem {
+        transform: translate3d(0, 0, 0);
+        transition: transform 0.6s;
+    }
+    .componente.caixa-conteudo-ativo .componente-fundo-imagem:before {
+        transition-delay: 0.6s;
+        transform: scale(1.1);
+    }
+    
+    @media screen and (max-width: 1120px) {
+        .componente-titulo {
+        font-size: 1rem;
+        }
+    }
