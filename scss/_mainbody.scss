@@ -333,6 +333,37 @@ h6 {
     width: 100%;
 }
 
+.modal {
+    --bs-modal-width: 700px;
+}
+
+.delete {
+    background-color: #911f1f;
+}
+
+.btn-secondary {
+    background-color: #2a3036;
+}
+
+.btn-success {
+    background-color: #113625;
+}
+
+.modal-header {
+    padding: 0;
+    border-bottom: 0;
+}
+
+.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 0;
+}
+
+.table>:not(caption)>*>* {
+    padding: 0.2rem 0.1rem;
+}
+
 .table__productos{
     display: flex;
 }
@@ -386,7 +417,7 @@ h6 {
 }
 
 .title-compra {
-    background: linear-gradient(90deg, #ff4100 0%, #ffc04d 50%, #ff4100 100%);
+    background: linear-gradient(90deg, #ff4100 0%, #ffac15 50%, #ff4100 100%);
 }
 
     .fondo-hamburguesas {

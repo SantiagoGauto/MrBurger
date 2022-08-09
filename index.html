@@ -27,6 +27,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jockey+One&display=swap" rel="stylesheet">
 
+    <!-- Animate.css -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
     <!-- Lunk sweetalert2 -->
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -58,25 +62,29 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#nosotros">nosotros</a>
+                        <a class="nav-link" href="#nosotros">Nosotros</a>
+                    </li>
+                    <!-- dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Menu
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#hamburguesas">hamburguesas</a></li>
+                            <li><a class="dropdown-item" href="#papas fritas">papas fritas</a></li>
+                            <li><a class="dropdown-item" href="#bebidas">bebidas</a></li>
+                            <li><a class="dropdown-item" href="#postres">postres</a></li>
+                            <li><a class="dropdown-item" href="#combos">combos</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#hamburguesas">hamburguesas</a>
+                        <a class="nav-link" href="#fotos">Galería</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#papas fritas">papas fritas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#bebidas">bebidas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#fotos">galería</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contacto">contacto</a>
+                        <a class="nav-link" href="#contacto">Contacto</a>
                     </li>
                 </ul>
-                <button type="button" class="btn btn-success boton">
+                <button type="button" class="btn btn-success boton" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <a class="nav-link" href="#carrito">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-cart-fill compra" viewBox="0 0 16 16">
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
@@ -84,6 +92,53 @@
                     Carrito
                     </a>
                 </button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <!-- header del modal -->
+                            <div class="modal-header">
+                                <div class="container-fluid px-0 lados">
+                                    <div class="row">
+                                        <div class="col-12 px-0">
+                                            <div class="title-burger title-compra text-center py-4">
+                                                <h4>Carrito</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- body del modal -->
+                            <div class="modal-body">
+                                <div id="carrito">
+                                    <div class="color-carrito">
+                                        <table class="table table-dark table-hover">
+                                            <thead>
+                                            <tr class="text-primary">
+                                                <th scope="col"></th>
+                                                <th scope="col">Productos</th>
+                                                <th scope="col">Precio</th>
+                                                <th scope="col">Cantidad</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody class="tbody">         
+                                            </tbody>
+                                        </table>
+                                        <div class="row mx-4">
+                                            <div class="col">
+                                            <h3 class="itemCartTotal text-white">Total: 0</h3>
+                                            </div>
+                                            <div class="col d-flex justify-content-end">
+                                            <button   button type="button" class="btn btn-secondary" data-bs-dismiss="modal">SEGUIR COMPRANDO</button>
+                                            <button class="btn btn-success">COMPRAR</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <form class="d-flex" role="search">
                 <input id= "buscador" class="form-control me-2" type="search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Buscar</button>
@@ -98,7 +153,7 @@
 <main class="main">
 <!-- parte del fondo inicio -->
     <section class="fondo_menu">
-        <div class="fondo_texto">
+        <div class="fondo_texto animate__bounceIn">
             <h1>MrBurger</h1>
             <p id="bienvenida">
                 Una de las mejores de Bs As
@@ -140,7 +195,7 @@
                 </a>
             </div>
             <div class="framework-card">
-                <a href="#postre">
+                <a href="#postres">
                     <img src="Iconos/postre.jpg">
                     <p>Postres</p>
                 </a>
@@ -226,6 +281,7 @@
                 </div>
             </div>
         </div>
+        <!-- segunda columna -->
             <div class="col d-flex justify-content-center mb-4">
                     <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
                     <h5 class="card-title pt-2 text-center text-primary">MrBurger N5</h5>
@@ -416,40 +472,194 @@
         </div>
     </div>
     </section>
-
-<!-- Carrito -->
-    <section id="carrito">
+    
+    <!-- postres -->
+    <section id="postres">
         <div class="container-fluid px-0 lados">
             <div class="row">
                 <div class="col-12 px-0">
-                    <div class="title-burger title-compra text-center py-4">
-                        <h4>Carrito</h4>
+                    <div class="title-burger text-center py-4">
+                        <h4>Postres</h4>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="color-carrito">
-            <table class="table table-dark table-hover">
-                <thead>
-                <tr class="text-primary">
-                    <th scope="col">#</th>
-                    <th scope="col">Productos</th>
-                    <th scope="col">Precio</th>
-                    <th scope="col">Cantidad</th>
-                </tr>
-                </thead>
-                <tbody class="tbody">         
-                </tbody>
-            </table>
-            <div class="row mx-4">
-                <div class="col">
-                <h3 class="itemCartTotal text-white">Total: 0</h3>
-                </div>
-                <div class="col d-flex justify-content-end">
-                <button class="btn btn-success">COMPRAR</button>
+    <!-- parte de los postres -->
+        <div class=" fondo-amarillo row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+            <div class="col d-flex justify-content-center mb-4">
+                <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                    <h5 class="card-title pt-2 text-center text-primary">Vaso de Carlota sabor fresa</h5>
+                    <img src="./img/post1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="text-primary">Precio: <span class="precio">$ 100</span></h5>
+                        <div class="d-grid gap-2">
+                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                    </div>
                 </div>
             </div>
         </div>
+            <div class="col d-flex justify-content-center mb-4">
+                <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                    <h5 class="card-title pt-2 text-center text-primary">Vaso de durazno con leche condensada</h5>
+                    <img src="./img/post2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="text-primary">Precio: <span class="precio">$ 90</span></h5>
+                        <div class="d-grid gap-2">
+                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="col d-flex justify-content-center mb-4">
+                <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                    <h5 class="card-title pt-2 text-center text-primary">Flanes de maicena</h5>
+                    <img src="./img/post3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="text-primary">Precio: <span class="precio">$ 70</span></h5>
+                        <div class="d-grid gap-2">
+                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="col d-flex justify-content-center mb-4">
+                <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                    <h5 class="card-title pt-2 text-center text-primary">Mousse de chocolate</h5>
+                    <img src="./img/post4.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="text-primary">Precio: <span class="precio">$ 150</span></h5>
+                        <div class="d-grid gap-2">
+                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- segunda columna -->
+            <div class="col d-flex justify-content-center mb-4">
+                    <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                    <h5 class="card-title pt-2 text-center text-primary">Pastel de zanahoria con piña</h5>
+                    <img src="./img/post5.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="text-primary">Precio: <span class="precio">$ 130</span></h5>
+                        <div class="d-grid gap-2">
+                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="col d-flex justify-content-center mb-4">
+                <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                    <h5 class="card-title pt-2 text-center text-primary">postre de queso, chocolate y menta</h5>
+                    <img src="./img/post6.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="text-primary">Precio: <span class="precio">$ 125</span></h5>
+                        <div class="d-grid gap-2">
+                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="col d-flex justify-content-center mb-4">
+                <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                    <h5 class="card-title pt-2 text-center text-primary">Gelatina light de frutos rojos</h5>
+                    <img src="./img/post7.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="text-primary">Precio: <span class="precio">$ 95</span></h5>
+                        <div class="d-grid gap-2">
+                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="col d-flex justify-content-center mb-4">
+                <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                    <h5 class="card-title pt-2 text-center text-primary">Cremosa gelatina con vainilla y chocolate</h5>
+                    <img src="./img/post8.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="text-primary">Precio: <span class="precio">$ 900</span></h5>
+                        <div class="d-grid gap-2">
+                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- combos -->
+    <section id="combos">
+        <div class="container-fluid px-0 lados">
+            <div class="row">
+                <div class="col-12 px-0">
+                    <div class="title-burger text-center py-4">
+                        <h4>Combos</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- listado combos -->
+        <div class=" fondo-amarillo row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+            <div class="col d-flex justify-content-center mb-4">
+                <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                    <h5 class="card-title pt-2 text-center text-primary">Mrburger y Fritas con ketchup</h5>
+                    <img src="./img/combo1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="text-primary">Precio: <span class="precio">$ 920</span></h5>
+                        <div class="d-grid gap-2">
+                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="col d-flex justify-content-center mb-4">
+                <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                    <h5 class="card-title pt-2 text-center text-primary">Mrburger Vegano</h5>
+                    <img src="./img/combo2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="text-primary">Precio: <span class="precio">$ 750</span></h5>
+                        <div class="d-grid gap-2">
+                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="col d-flex justify-content-center mb-4">
+                <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                    <h5 class="card-title pt-2 text-center text-primary">Super-Mrburger y Fritas</h5>
+                    <img src="./img/combo3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="text-primary">Precio: <span class="precio">$ 1150</span></h5>
+                        <div class="d-grid gap-2">
+                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="col d-flex justify-content-center mb-4">
+                <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                    <h5 class="card-title pt-2 text-center text-primary">Mrburger-simple y Fritas</h5>
+                    <img src="./img/combo4.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="text-primary">Precio: <span class="precio">$ 890</span></h5>
+                        <div class="d-grid gap-2">
+                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </section>
 
 <!-- galería -->
@@ -598,6 +808,7 @@
     </footer>
 </main>
 
+<!-- Todos los script -->
 
     <!-- Vinculo jquery -->
 
@@ -607,9 +818,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
-    <!-- Vinculo JavaScript -->
+    <!-- Vinculo JavaScript actual -->
 
     <script src="./js/scripts.js"></script>
+
+    <!-- antiguo archivo js de los primeros desafíos (como recuerdo queda ahi jaja) -->
     <!-- <script src="mainjs.js"></script> -->
 </body>
 </html>

@@ -81,7 +81,7 @@ function renderCarrito(){
     //aca dentro creamos un nuevo contenido a tr.
     const Content = `
     
-    <th scope="row">1</th>
+    <th scope="row"></th>
             <td class="table__productos">
               <img src=${item.img}  alt="">
               <h6 class="title">${item.title}</h6>
@@ -266,7 +266,7 @@ document.getElementById("btn").addEventListener("click", () => {
     })
 });
 
-// usando async y await en vez de fetch .then.
+// usando async y await con fetch.
 
 const lista = document.getElementById("listado");
 
@@ -330,7 +330,7 @@ $botoesDeFechar.forEach(function ($btn) {
   });
 });
 
-// efecto tiltable card
+// efecto tiltable card (imagen alado de la mini-reseña de la pagina)
 
 let el = document.getElementById('w-101')
 const height = el.clientHeight

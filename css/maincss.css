@@ -25,6 +25,10 @@ a {
   --bs-navbar-padding-y: 0 !important;
   --bs-navbar-brand-font-size: 1.80rem; }
 
+.dropdown-menu-dark {
+  font-family: 'Jockey One', sans-serif;
+  --bs-dropdown-bg: #bf7400; }
+
 .navbar-brand {
   padding-top: 0px;
   padding-bottom: 0px;
@@ -374,6 +378,30 @@ h6 {
   margin: 0 auto;
   width: 100%; }
 
+.modal {
+  --bs-modal-width: 700px; }
+
+.delete {
+  background-color: #911f1f; }
+
+.btn-secondary {
+  background-color: #2a3036; }
+
+.btn-success {
+  background-color: #113625; }
+
+.modal-header {
+  padding: 0;
+  border-bottom: 0; }
+
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 0; }
+
+.table > :not(caption) > * > * {
+  padding: 0.2rem 0.1rem; }
+
 .table__productos {
   display: flex; }
 
@@ -415,7 +443,7 @@ h6 {
   background-color: #0000009c; }
 
 .title-compra {
-  background: linear-gradient(90deg, #ff4100 0%, #ffc04d 50%, #ff4100 100%); }
+  background: linear-gradient(90deg, #ff4100 0%, #ffac15 50%, #ff4100 100%); }
 
 .fondo-hamburguesas {
   background-color: #0000009c; }
