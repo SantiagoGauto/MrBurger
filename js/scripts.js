@@ -3,6 +3,20 @@ const Clickbutton = document.querySelectorAll('.button')
 //llamando al body de la carta
 const tbody = document.querySelector('.tbody')
 // guardado de información, todo lo que este ahi dentro se va a imprimir o renderizar en la sesión carrito.
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
+//Toastify de https://sweetalert2.github.io/#examples
+
 let carrito = []
 
 
@@ -34,17 +48,27 @@ function addToCarritoItem(e){
   addItemCarrito(newItem)
 }
 
+//Uso de Toast cuando se da al botón "Añadir a carrito".
+const comprador = document.querySelectorAll('.buy')
+comprador.forEach(el => el.addEventListener('click', () => {
+  Toast.fire({
+    icon: 'success',
+    title: 'Compra realizada con éxito',
+    background: '#026e3d',
+    color: '#fff'
+  })
+}))
 
 function addItemCarrito(newItem){
 
-  //constante del alert para que aparezca.
-  const alert = document.querySelector('.alert')
+  // //constante del alert para que aparezca.
+  // const alert = document.querySelector('.alert')
 
-  //cada vez que se compra un producto aparezca un alert como notificación de la compra.
-  setTimeout( function(){
-    alert.classList.add('hide')
-  }, 1000)
-    alert.classList.remove('hide')
+  // //cada vez que se compra un producto aparezca un alert como notificación de la compra.
+  // setTimeout( function(){
+  //   alert.classList.add('hide')
+  // }, 1000)
+  //   alert.classList.remove('hide')
 
   // llamamos al input elemento de la cantidad
   const InputElemnto = tbody.getElementsByClassName('input__elemento')
@@ -145,12 +169,25 @@ function removeItemCarrito(e){
 
   setTimeout( function(){
     alert.classList.add('remove')
-  }, 1000)
+  }, 0)
     alert.classList.remove('remove')
 
   tr.remove()
   CarritoTotal()
 }
+
+//para vaciar todo el carrito y cartel
+const vaciador = document.getElementById('vaciado')
+vaciador.addEventListener('click', () => {
+  Toast.fire({
+    icon: 'warning',
+    title: 'Carrito vacío',
+    background: '#d94444',
+    color: '#fff'
+  })
+  carrito = []
+  renderCarrito()
+})
 
 // Función para sumar la cantidad de los objetos
 function sumaCantidad(e){
@@ -186,17 +223,63 @@ window.onload = function(){
   }
 }
 
-//######################################################################################
-//-Eventos
-//######################################################################################
+// alerta a la hora de dar a comprar
+const buttonMessageBuyItems = document.getElementById('comprado');
+buttonMessageBuyItems.addEventListener("click", () => {
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: 'btn btn-success',
+      cancelButton: 'btn btn-danger'
+    },
+    buttonsStyling: false
+  })
+  swalWithBootstrapButtons.fire({
+    background: '#bf7400',
+    color: '#e9ecef',
+    title: '¿Finalizar compra?',
+    text: "¡De en cancelar para continuar!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Si, adelante!',
+    cancelButtonText: 'No, cancelar!',
+    reverseButtons: true
+  }).then((result) => {
+    //aceptado de la compra.
+    if (result.isConfirmed) {
+      swalWithBootstrapButtons.fire(
+        '¡Finalizado!',
+        'Su compra a sido actualizada con éxito! :)',
+        'success'
+      )
+      //vaciar todo el carrito a la hora de dar a 'Si, adelante!', simulando el fin de la compra y poder comenzar con otra.
+      carrito = []
+      renderCarrito()
+      // cancelado de la compra, poder continuar sin perder todo el proceso de la compra.
+    } else if (
+      /* Read more about handling dismissals below */
+      result.dismiss === Swal.DismissReason.cancel
+    ) {
+      swalWithBootstrapButtons.fire(
+        'Cancelado',
+        'Continue con su compra! :)',
+        'error',
+      )
+    }
+  })
+});
 
-//uso del evento Submit, cuando el usuario puse el botón de enviar se mostraran los datos en la consola.
+//##############################################################################################################################
+//########################################
+//-Eventos
+//########################################
+//##############################################################################################################################
 
 const formulario = document.querySelector("#formulario");
 const nombre = document.getElementById("names")
 const edad = document.getElementById("edad")
 const gmail = document.getElementById("email")
 
+//uso del evento Submit, cuando el usuario puse el botón de enviar se mostraran los datos en la consola.
 
 formulario.addEventListener("submit", validarFormulario);
 

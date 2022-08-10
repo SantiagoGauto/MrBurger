@@ -416,8 +416,46 @@ h6 {
     background-color: #0000009c;
 }
 
+.vaciar {
+    background-color: #911f1f;
+    --bs-btn-border-color: #ff4949;
+    --bs-btn-hover-bg: #960404;
+    --bs-btn-hover-border-color: #d91616;
+    margin-left: 20px;
+}
+
 .title-compra {
     background: linear-gradient(90deg, #ff4100 0%, #ffac15 50%, #ff4100 100%);
+}
+
+.compra-carrito-none {
+    display: none;
+}
+
+.carrito-menu {
+    display: flex;
+    align-items: center;
+}
+
+.swal2-container {
+    z-index: 20000 !important;
+}
+
+.swal2-icon.swal2-warning {
+    border-color: #911f1f;
+    color: #911f1f;
+}
+
+.swal2-cancel {
+    margin-right: 10px;
+}
+
+.swal2-confirm {
+    margin-left: 10px;
+}
+
+.swal2-cancel {
+    background-color: #911f1f;
 }
 
     .fondo-hamburguesas {

@@ -56,9 +56,68 @@
     <nav class="navbar navbar-expand-lg bg-light navegador">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">MrBurger</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <div class="carrito-menu">
+                <!-- carrito-compra-1 -->
+                    <button type="button" class="compra-carrito-none btn btn-success boton" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <a class="nav-link" href="#carrito">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-cart-fill compra" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+                        </svg>
+                        Carrito
+                        </a>
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <!-- header del modal -->
+                                <div class="modal-header">
+                                    <div class="container-fluid px-0 lados">
+                                        <div class="row">
+                                            <div class="col-12 px-0">
+                                                <div class="title-burger title-compra text-center py-4">
+                                                    <h4>Carrito</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- body del modal -->
+                                <div class="modal-body">
+                                    <div id="carrito">
+                                        <div class="color-carrito">
+                                            <table class="table table-dark table-hover">
+                                                <thead>
+                                                <tr class="text-primary">
+                                                    <th scope="col"></th>
+                                                    <th scope="col">Productos</th>
+                                                    <th scope="col">Precio</th>
+                                                    <th scope="col">Cantidad</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody class="tbody">         
+                                                </tbody>
+                                            </table>
+                                            <div class="row mx-4">
+                                                <div class="col">
+                                                <h3 class="itemCartTotal text-white">Total: 0</h3>
+                                                </div>
+                                                <div class="col d-flex justify-content-end">
+                                                <button   button type="button" class="btn btn-secondary" data-bs-dismiss="modal">SEGUIR COMPRANDO</button>
+                                                <button id="vaciado" class="vaciar btn btn-success">VACIAR</button>
+                                                <button id="comprado" class="comprado btn btn-success">COMPRAR</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -84,7 +143,8 @@
                         <a class="nav-link" href="#contacto">Contacto</a>
                     </li>
                 </ul>
-                <button type="button" class="btn btn-success boton" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <!-- carrito-compra-2 -->
+                <button type="button" class="compra-carrito-si btn btn-success boton" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <a class="nav-link" href="#carrito">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-cart-fill compra" viewBox="0 0 16 16">
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
@@ -209,11 +269,10 @@
         </div>
     </section>
 <!-- Alerta de compras -->
-    <div class="alert container position-sticky top-0 alert-primary hide" role="alert">
+    <!-- <div class="alert container position-sticky top-0 alert-primary hide" role="alert">
         Producto Añadido al carrito!
-    </div>
-    <div class="alert container position-sticky top-0 alert-danger remove" role="alert">
-        Producto removido!
+    </div> -->
+    <div class="remove">
     </div>
 
 <!-- hamburguesas -->
@@ -237,7 +296,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 300</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -250,7 +309,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 450</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -263,7 +322,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 550</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -276,7 +335,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 600</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -290,7 +349,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 700</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -303,7 +362,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 780</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -316,7 +375,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 850</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -329,7 +388,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 900</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -358,7 +417,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 300</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -371,7 +430,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 300</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -384,7 +443,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 300</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -397,7 +456,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 300</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -426,7 +485,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 200</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -439,7 +498,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 150</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -452,7 +511,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 150</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -465,7 +524,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 150</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -494,7 +553,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 100</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -507,7 +566,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 90</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -520,7 +579,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 70</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -533,7 +592,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 150</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -547,7 +606,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 130</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -560,7 +619,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 125</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -573,7 +632,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 95</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -586,7 +645,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 900</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -615,7 +674,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 920</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -628,7 +687,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 750</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -641,7 +700,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 1150</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>
@@ -654,7 +713,7 @@
                         <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <h5 class="text-primary">Precio: <span class="precio">$ 890</span></h5>
                         <div class="d-grid gap-2">
-                        <button  class="btn btn-primary button color-boton">Añadir a Carrito</button>
+                        <button  class="buy btn btn-primary button color-boton">Añadir a Carrito</button>
                     </div>
                 </div>
             </div>

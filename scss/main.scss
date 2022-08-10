@@ -66,4 +66,16 @@ a {
         display: flex;
         flex-wrap: wrap;
     }
+
+    .compra-carrito-none {
+        display: flex;
+    }
+
+    .compra-carrito-si {
+        display: none;
+    }
+
+    .top-0 {
+        top: 70px !important;
+    }
 }
